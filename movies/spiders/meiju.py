@@ -2,7 +2,7 @@
 import scrapy
 from movies.items import MoviesItem
 
-
+import time
 class MeijuSpider(scrapy.Spider):
     name = 'meiju'
     allowed_domains = ['meijutt.com']
@@ -17,9 +17,9 @@ class MeijuSpider(scrapy.Spider):
         # 获取剧集名
         movies = response.xpath('//ul[@class="top-list  fn-clear"]/li')
         for movie in movies:
-            name = movie.xpath('//h5/a/text()').extract()
+            name = movie.xpath('./h5/a/text()').extract_first()
             # state = movie.xpath('//span/font/text()').extract()
-            print(name)
+            # print(name)
             item = MoviesItem()
             item['name'] = name
             yield item
