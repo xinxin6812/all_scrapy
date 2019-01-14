@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
+from movies.items import MoviesItem
 
 
 class MeijuSpider(scrapy.Spider):
@@ -13,5 +14,13 @@ class MeijuSpider(scrapy.Spider):
         :param response:
         :return:
         """
-        # //ul[@class="top-list  fn-clear"]/li/h5/text()
-        pass
+        # 获取剧集名
+        movies = response.xpath('//ul[@class="top-list  fn-clear"]/li')
+        for movie in movies:
+            name = movie.xpath('//h5/a/text()').extract()
+            # state = movie.xpath('//span/font/text()').extract()
+            print(name)
+            item = MoviesItem()
+            item['name'] = name
+            yield item
+
