@@ -1,13 +1,13 @@
-# 美剧天堂
-爬取美剧天堂的相关信息
+# TV drama heaven
+Crawl for information about paradise
 
-# 校花网
-爬取最新校花的相册内所有照片
+# Campus network
+Climb all the photos in the album of the latest school flower
 
 
-## 版本信息
-pycharm 最新版
+## Version information
+pycharm pro
 python 3.6
 scrapy 1.5.1
 
-### 因网页改版原因等，如有项目运行异常，请私信。
+### Due to webpage revision, if there is any abnormal project operation, please send a private message.
